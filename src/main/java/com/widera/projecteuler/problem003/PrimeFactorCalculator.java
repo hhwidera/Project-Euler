@@ -35,16 +35,8 @@ public class PrimeFactorCalculator {
         long b = x - y;
 
         List<Long> result = new ArrayList<>();
-        if (isPrimeNumber(a)) {
-            result.add(a);
-        } else {
-            result.addAll(new PrimeFactorCalculator(a).get());
-        }
-        if (isPrimeNumber(b)) {
-            result.add(b);
-        } else {
-            result.addAll(new PrimeFactorCalculator(b).get());
-        }
+        result.addAll(new PrimeFactorCalculator(a).get());
+        result.addAll(new PrimeFactorCalculator(b).get());
         return result;
     }
 
