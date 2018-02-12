@@ -13,7 +13,7 @@ public class PrimeNumber {
         }
         return LongStream.rangeClosed(min, max)
                 .parallel()
-                .filter(number -> number % 2 > 0)
+                .filter(number -> number == 2 || number % 2 > 0)
                 .filter(number -> LongStream.rangeClosed(2, (int)Math.sqrt(number)).allMatch(j -> number%j != 0));
     }
 
